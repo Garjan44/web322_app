@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-12">
+          <h2>Students</h2>
+          <hr />
+
+          <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                    {{!-- /* Email, Address, Expected Credential, Status, Program and Registration Date --}}
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Expected Credentials</th>
+                        <th>Status</th>
+                        <th>Program</th>
+                        <th>Registration Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each students}}
+                    <tr>
+                        <td><a href="/student/{{this.studentID}}">{{this.studentID}}</a></td>
+                        <td>{{this.firstName}} {{this.lastName}}</a></td>
+                        <td><a href="mailto:{{this.email}}">{{this.email}}</a></td>          
+                        <td>{{this.addressStreet}} <br> {{this.addressCity}}, {{this.addressState}} <br>{{this.addressPostal}}</td>                 
+                        <td><a href="/students?expectedCredential={{this.expectedCredential}}">{{this.expectedCredential}}</a> </td>
+                        <td><a href="/students?status={{this.status}}">{{this.status}}</a></td>
+                        <td><a href="/students?program={{this.program}}">{{this.program}}</a> </td>
+                        <td>{{this.registrationDate}}</td>                        
+                    </tr> 
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
